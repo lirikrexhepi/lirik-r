@@ -291,7 +291,11 @@ a#github:hover {
     }
 
     #blob{
-      height: 200px;
+      display: none;
+    }
+
+    #blur{
+      display: none;
     }
 
     #logo{
