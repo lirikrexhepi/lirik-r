@@ -1,0 +1,301 @@
+::selection {
+    background-color: #E7EB83;
+    color: black;
+  }
+
+html {
+    scroll-behavior: smooth;
+  }
+  
+body{
+    background-color: black;
+    scroll-behavior: smooth;
+}
+
+#logo{
+    margin: 0;
+    padding: 0;
+    color:white;
+    font-size: 1rem;
+    position: fixed;
+    right: 3%;
+    bottom: 4%;
+    font-family: "Space Mono", monospace;
+    z-index: 3;
+}
+
+#linkedIn{
+    color: white;
+    font-weight: 600;
+    font-family: "Space Mono", monospace;
+    position: fixed;
+    left: 2.5%;
+    bottom: 4%;
+    z-index: 3;
+    text-decoration: none;
+    letter-spacing: 0;
+    transition: color 0.5s ease, letter-spacing 0.5s ease;
+  }
+
+#github{
+    color:white;
+    font-weight: 600;
+    position: fixed;
+    font-family: "Space Mono", monospace;
+    position: fixed;
+    left: 2.5%;
+    bottom: 7%;
+    z-index: 3;
+    text-decoration: none;
+    letter-spacing: 0;
+    transition: color 0.5s ease, letter-spacing 0.5s ease;
+}
+
+
+a#linkedIn:hover,
+a#github:hover {
+  color: #c4c4c4;
+  letter-spacing: 0.05em;  /* set the color to transition to on hover */
+}
+
+#blur{
+    height: 100%;
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 2;
+    backdrop-filter: blur(200px);
+}
+
+#blob{
+    background-color: white;
+    height: 500px;
+    aspect-ratio: 1;
+    position: fixed;
+    left: 50%;
+    top: 50%;
+    translate: -50% -50%;
+    border-radius: 50%;
+    animation: rotate 20s infinite;
+    overflow: hidden;
+
+    background: linear-gradient(to right, aquamarine, mediumpurple);
+
+}
+
+@keyframes rotate{
+    from{
+        rotate: 0deg;
+    }
+    50%{
+        scale:1 1.3;
+    }
+    to{
+        rotate: 360deg;
+    }
+}
+
+#mainText {
+  width: 41%;
+  text-align: left;
+  position: fixed;
+  margin-left: 30%;
+  z-index: 4;
+  margin-top: 10%;
+  font-weight: 400;
+  opacity: 1;
+  transition: all 0.5s ease-in-out;
+}
+
+
+
+#mainText.scroll {
+    opacity: 0.4;
+    scale: 0.8;
+  }
+
+.word {
+    color: white;
+    font-size: 6rem;
+    font-family: "Rubik", sans-serif;
+    margin: 0rem;
+    text-transform: uppercase;
+    transition: opacity 250ms ease;
+  }
+
+#contactMe{
+    color: white;
+}
+
+#mainText:has(.fancy:hover) .word:not(.fancy:hover){
+    opacity: 0.2;
+}
+
+#mainText p{
+    margin: 0;
+}
+
+
+
+.line{
+    display: flex;
+    justify-content: space-between;
+}   
+
+.fancy {
+    display: inline-block;
+}
+
+.fancy span {
+    display: inline-block;
+}
+
+.fancy > .outer{
+
+    transition: transform 350ms ease;
+}
+
+.fancy:hover > .outer {
+    transition-duration: 800ms;
+  }
+
+.fancy:hover > .outer > .inner {
+    animation: float 5s ease infinite;
+}
+
+.fancy:hover > .outer > .inner > .letter {
+
+    background-size: 1000%;
+    -webkit-background-clip: text;
+    animation: background-pan 150s linear infinite;
+  }
+
+
+  .fancy:hover > .outer:nth-child(1) {
+    transform: translate(-20%, 20%) rotate(8deg);
+  }
+  
+  .fancy:hover > .outer:nth-child(2) {
+    transform: translate(-40%, 20%) rotate(4deg);
+  }
+  
+  .fancy:hover > .outer:nth-child(3) {
+    transform: translate(-10%, 60%) rotate(-6deg);
+  }
+  
+  .fancy:hover > .outer:nth-child(4) {
+    transform: translate(0%, 8%) rotate(-8deg);
+  }
+  
+  .fancy:hover > .outer:nth-child(5) {
+    transform: translate(0%, -20%) rotate(5deg);
+  }
+  
+  .fancy:hover > .outer:nth-child(6) {
+    transform: translate(0%, 20%) rotate(-3deg);
+  }
+  
+  .fancy:hover > .outer:nth-child(7) {
+    transform: translate(0%, -40%) rotate(-5deg);
+  }
+  
+  .fancy:hover > .outer:nth-child(8) {
+    transform: translate(0%, 15%) rotate(10deg);
+  }
+  
+  .fancy:hover > .outer:nth-child(9) {
+    transform: translate(0%, -50%) rotate(8deg);
+  }
+  
+  .fancy:hover > .outer:nth-child(10) {
+    transform: translate(0%, 15%) rotate(-6deg);
+  }
+
+  .fancy:hover > .outer:nth-child(11) {
+    transform: translate(50%, -10%) rotate(-3deg);
+  }
+  
+  .fancy:hover > .outer:nth-child(12) {
+    transform: translate(120%, -30%) rotate(-10deg);
+  }
+
+
+  /*Second Part of Site (Image on scroll)*/
+
+  .box {
+    position: absolute;
+    bottom: 0;
+    width: 99.5%;
+    height: 100vh;
+    transition: transform 1s ease-out; /* apply a CSS transition to the transform property */
+    transform: translateY(100%); /* initially move the div outside the viewport */
+    z-index: 4;
+    margin: 0;
+    overflow: hidden;
+
+  }
+
+  .image{
+    width: 15vw;
+    position: absolute;
+    transform: translate(-50%, -50%);
+  }
+
+  .image[data-status="inactive"]{
+    display: none;
+  }
+
+  .image[data-status="active"]{
+    display: block;
+  }
+  
+
+#experiences{
+  margin: 0;
+  padding: 0;
+  width: 99.8%;
+  height: 50vw;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 5;
+  position: relative;
+  opacity: 0;
+  transition: opacity 0.5s ease;
+}
+
+  
+  
+
+
+#mainHero{
+  height: 100vw;
+  width: 100%;
+
+}
+
+
+  @media only screen and (max-width: 600px) {
+    #mainText{
+      width: 70%;
+      margin-left: 15%;
+      margin-top: 30%;
+    
+    }
+
+    .word{
+      font-size: 1.5rem;
+    }
+
+    .fancy > .outer > .inner > .letter{
+      font-size: 2rem;
+    }
+
+    #blob{
+      height: 200px;
+    }
+
+    #logo{
+      top: 5%;
+      right: 25%;
+    }
+  }
